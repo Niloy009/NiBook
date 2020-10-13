@@ -21,12 +21,12 @@ class DatabaseSeeder extends Seeder
         User::truncate();
 
         factory(User::class)->create([
-            'name' => 'Admin',
+            'fname' => 'Admin',
             'email' => 'admin@mail.com',
         ]);
 
         factory(User::class)->create([
-            'name' => 'User',
+            'fname' => 'User',
             'email' => 'user@mail.com',
         ]);
     }
