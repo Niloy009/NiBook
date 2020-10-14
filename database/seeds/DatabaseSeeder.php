@@ -3,6 +3,8 @@
 use Illuminate\Database\Seeder;
 
 use App\Models\User;
+use App\Models\Post;
+use App\Models\PostFiles;
 use Illuminate\Support\Facades\DB;
 
 class DatabaseSeeder extends Seeder
@@ -19,6 +21,9 @@ class DatabaseSeeder extends Seeder
 
 
         User::truncate();
+        Post::truncate();
+        PostFiles::truncate();
+
 
         factory(User::class)->create([
             'fname' => 'Admin',
@@ -29,5 +34,11 @@ class DatabaseSeeder extends Seeder
             'fname' => 'User',
             'email' => 'user@mail.com',
         ]);
+
+
+        factory(User::class, 50)->create();
+        factory(Post::class, 50)->create();
+        factory(PostFiles::class, 50)->create();
+
     }
 }

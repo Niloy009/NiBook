@@ -1,1 +1,45 @@
+.mHeight-300 {
+    min-height: 300px;
+}
+
+.mHeight-350 {
+    min-height: 350px;
+}
+
+.profile-avatar-replace {
+    position: absolute;
+    left: 0;
+    top: 32px;
+    cursor: pointer;
+}
+
+.profile-avatar-replace-style {
+    height: 50px;
+    width: 50px;
+}
+
+.profile-avatar-style {
+    height: 100px;
+    width: 100px;
+}
+
+.error-right-msg {
+    text-align: right;
+    font-size: 16px;
+}
+
+.hide {
+    position: absolute !important;
+    top: -9999px !important;
+    left: -9999px !important;
+}
+
+.t4t-forum {
+    height: 635px !important;
+    overflow-y: scroll;
+}
+
+.t4t-social-chat {
+    height: 620px !important;
+}
 
