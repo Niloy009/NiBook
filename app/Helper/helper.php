@@ -1,6 +1,22 @@
 <?php
 
+/**
+ * @param $image_name
+ * @return string to concat
+ */
+function imagePath($image_name = null)
+{
+    return asset('storage/images/' . $image_name);
+}
 
+/**
+ * @param $file_name
+ * @return string to concat
+ */
+function filePath($file_name = null)
+{
+    return asset('storage/files/' . $file_name);
+}
 /*
 *  Used to convert date for database
 *  @param

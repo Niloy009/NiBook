@@ -23,6 +23,18 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+    protected $appends = [
+        'full_name'
+    ];
+    /**
+     * Get the client's full name.
+     *
+     * @return string
+     */
+    public function getFullNameAttribute()
+    {
+        return "{$this->fname} {$this->lname}";
+    }
 
     /**
      * The attributes that should be cast to native types.
