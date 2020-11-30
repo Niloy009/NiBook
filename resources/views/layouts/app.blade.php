@@ -22,7 +22,8 @@
     <!-- Theme style -->
     <link rel="stylesheet" href="{{asset('/')}}asset/css/adminlte.min.css">
     <!-- Date picker -->
-    <link rel="stylesheet" href="{{asset('/')}}asset/plugins/bootstrap-datepicker/css/bootstrap-datepicker.standalone.min.css">
+    <link rel="stylesheet"
+          href="{{asset('/')}}asset/plugins/bootstrap-datepicker/css/bootstrap-datepicker.standalone.min.css">
     <!-- icheck bootstrap -->
     <link rel="stylesheet" href="{{asset('/')}}asset/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
     <!-- Custom style -->
@@ -38,48 +39,52 @@
                 <a class="navbar-brand" href="{{ url('/home') }}">
                     <h3>{{ config('app.name', 'Laravel') }}</h3>
                 </a>
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown"
-                                   class="nav-link dropdown-toggle"
-                                   href="#" role="button"
-                                   data-toggle="dropdown"
-                                   aria-haspopup="true"
-                                   aria-expanded="false" v-pre>
-                                    {{ Auth::user()->full_name }}
-                                    <span class="caret"></span>
-                                </a>
+                <!-- Right Side Of Navbar -->
+                <ul class="navbar-nav ml-auto">
+                    <!-- Authentication Links -->
 
-                                <div class="dropdown-menu dropdown-menu-right"
-                                     aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
+
+                    @guest
+                    @else
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown"
+                               class="nav-link dropdown-toggle font-weight-bold"
+                               href="#" role="button"
+                               data-toggle="dropdown"
+                               aria-haspopup="true"
+                               aria-expanded="false" v-pre>
+                                {{ Auth::user()->full_name }}
+                                <span class="caret"></span>
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{route('my.profile')}}">
+                                    {{auth()->user()->full_name}}
+                                </a>
+                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                   onclick="event.preventDefault();
                                        document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-                                    <form id="logout-form"
-                                          action="{{ route('logout') }}"
-                                          method="POST"
-                                          style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                    </ul>
-                </div>
+                                    {{ __('Logout') }}
+                                </a>
+                                <form id="logout-form"
+                                      action="{{ route('logout') }}"
+                                      method="POST"
+                                      style="display: none;">
+                                    @csrf
+                                </form>
+                            </div>
+                        </li>
+                    @endguest
+                </ul>
             </div>
-        </nav>
-    </section>
-    <section class="px-1 py-1">
-        <main class="container mx-auto">
-            @yield('content')
-        </main>
-    </section>
+</div>
+</nav>
+</section>
+<section class="px-1 py-1">
+    <main class="container mx-auto">
+        @yield('content')
+    </main>
+</section>
 </div>
 
 <!-- SCRIPTS -->

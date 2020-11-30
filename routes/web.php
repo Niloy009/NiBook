@@ -12,10 +12,16 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+//    return view('welcome');
+    return redirect('/login');
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/posts/{user}', 'PostController@create')->name('post.create');
+
+//user
+Route::get('/my-profile', 'UserController@myProfile')->name('my.profile');
+
+

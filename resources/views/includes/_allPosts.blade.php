@@ -3,13 +3,12 @@
         <div class="user-block">
             <img class="img-circle img-bordered-sm" src="https://picsum.photos/40" alt="user image">
             <span class="username">
-                          <a href="#">{{$post->user->fname}}</a>
+                          <a href="#">{{$post->user->full_name}}</a>
                         </span>
             <span class="description">{{showDiffForHuman($post->created_at)}}</span>
         </div>
         <div>
             {{$post->body}}
-
             <div class="">
                 @foreach($post->files as $key => $file)
                     @if($file->isImage == 0)
@@ -31,9 +30,8 @@
         </div>
 
         <p class="mt-1">
-
-            <a href="#" class="link-black text-sm mr-2"><i class="far fa-thumbs-up mr-1"></i> Like</a>
-            <a href="#" class="link-black text-sm"><i class="far fa-comments mr-1"></i> Comment</a>
+            <a href="#" class="text-dark mr-2"><i class="far fa-thumbs-up mr-1"></i></a>
+            <a href="#" class="text-dark"><i class="far fa-comments mr-1"></i></a>
             <span class="float-right">
                           <a href="#" class="link-black text-sm">
                             <i class="far fa-comments mr-1"></i> Comments (5)

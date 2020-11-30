@@ -4,8 +4,8 @@
             Home
         </a>
 
-      <a href="#" class="font-weight-bold list-group-item text-dark">
-            Profile
+      <a href="{{route('my.profile')}}" class="font-weight-bold list-group-item text-dark">
+            {{auth()->user()->full_name}}
         </a>
         <a href="#" class="font-weight-bold list-group-item text-dark">
             Group
